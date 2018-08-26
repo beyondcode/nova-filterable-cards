@@ -1,0 +1,45 @@
+{
+    "name": "beyondcode/nova-filterable-cards",
+    "description": "Filterable metric cards for Laravel Nova.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "laravel/nova": "*",
+        "orchestra/testbench": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Beyondcode\\FilterableCard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Beyondcode\\FilterableCard\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Beyondcode\\FilterableCard\\CardServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./../../../../Packages/nova"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "mockery/mockery": "^1.1"
+    }
+}
