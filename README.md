@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/beyondcode/nova-filterable-cards.svg?style=flat-square)](https://packagist.org/packages/beyondcode/nova-filterable-cards)
 [![Total Downloads](https://img.shields.io/packagist/dt/beyondcode/nova-filterable-cards.svg?style=flat-square)](https://packagist.org/packages/beyondcode/nova-filterable-cards)
+[![Build Status](https://travis-ci.org/beyondcode/nova-filterable-cards.svg?branch=master)](https://travis-ci.org/beyondcode/nova-filterable-cards)
 
 Add custom filters to your Laravel Nova metrics. 
 
