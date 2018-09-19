@@ -1,20 +1,20 @@
 language: php
-
 php:
-  - 7.1
-  - 7.2
-
+- 7.1
+- 7.2
 env:
   matrix:
-    - COMPOSER_FLAGS="--prefer-lowest"
-    - COMPOSER_FLAGS=""
-
+  - COMPOSER_FLAGS="--prefer-lowest"
+  - COMPOSER_FLAGS=""
+  global:
+  - secure: WqXC1ukPbBYHAjDz62U67Bpp81tUWgQxTc/MAvL4eotv/zG9NOupE0jKX5xj4iaAEDTWeDNwSY1BfiF3uMNjIprTQnlFuiTSrE8FBUHV4uI9oeYpbcJDVeccdz5QWp72C9vxhGAp3zORzTWsb3uLuutb1rOIEkkS5b4uikU6vetg40zZsSfRuPvQHvGR6ARhtdZreiboHCJ7kjxRSu6od57vfj6QsVx4qBPbl9W+7y9Tfnz7KO7mz5m/kQ0N2RdSLQJKHCE6OK+GvRCzmlePzBHcKT3A9lv+nlADuOG04fuuZPav9z41Dm3Yre0gjVpvMIUUc8SdswxP3XZuxZGwS2HiUkkiPaFpsJPw5HITzzYZ5NXKNCgnDg5qK64E1wGR6TaI90wH/kfdt6NWTcym7YDNWEmq2ttE5QruJB9jiDdOudojtsNKAMRf5KHhgZExX7Tr9d0dTgSz5aXoLwx3+E5GS2k2BuiLLGtlcNVdzrzaItFFl4s5DsqkNJFPdkVEKWffaq0c2LnqSVqgRo/us9Fnr1V2fx6z55TXRMfU72QJYp5Ie4qryYuNeGjMQpXWcJzjyH44pAeld1bA09o207i6wBL5xWs2s2RaqQNB8wmARIimqKrgkYCBgaFUF4i1nih7xc1N09XO5mvSEVXXBmwYkMS0ir8yDaGXl+a0YEg=
+  - secure: WWDTKIEL/UVMI34e5qmGL8vR4k944GO8i9vtkE1NE6j6elcGM/AD5maSZ8mUYAhjQmRKdfEvUXHz9Gv4wkDuRhbL7LGB3hKPLK7K1Il87rDAkrIXOabcxYji5sJHkBMoFvkGmBshpOJUqplNVaoGrXi0LHO0bUlF7ZEgFIMfyLkX7ewn3WUsm29obBn6DPi4AW0tZ8+zY3zyZ6B2jH25QMu3SDywig2cyhRhq4vrmNtWEc2RJ9M07RLmS90u7NHbgBwwfpm1Gn2s/BcWB0A3VMfjVYxoMMNNzKefbt0NQgT+HhCiqoNYM7GtweOFHkR824BtLsedfVETKmH1xwMxMHrN4aZf6mmzYYbTWMiRy+ZlDXEeD1EXJufBS/BQglcq06x25wkI/S6Rqt2Zz4QooNjbk0ZFwjy/s8IQPESWtTaw2VI+sOEOcfhj5w38ahy/dSy5LX07R4WX2orc8aRmBI6krBPuufQuPKOtbXmCG5aBdnznWv9cC8y3E2PR19vmP6TPoLEtfoCYi95GuUTFMxLfc5oVA1X4uLQPs905E2cHet+xlgW+03uqgU1M7a9EixklaKeVRu+pRHSIxFNnMgD92itxKxQk1YSCet8Psf8MJ2FSJ/JR/FSZeuJZ/RufjJhCxuZ1d/LER5btAiH9hUoQ86Px7l3RnAQDqKnIxY0=
+install:
+  - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
-
+- travis_retry composer self-update
+- travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
 script:
-  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
-
+- vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 after_script:
-  - php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
+- php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
