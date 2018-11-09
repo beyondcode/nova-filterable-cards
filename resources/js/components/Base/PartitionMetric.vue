@@ -28,7 +28,7 @@
         <portal to="modals">
             <transition name="fade">
                 <filterable-modal
-                        v-show="modalOpen"
+                        v-if="modalOpen"
                         :title="title"
                         :filters="filters"
                         @filtered="filtered"

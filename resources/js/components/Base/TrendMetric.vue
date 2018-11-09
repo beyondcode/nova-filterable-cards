@@ -22,7 +22,7 @@
         <portal to="modals">
             <transition name="fade">
                 <filterable-modal
-                        v-show="modalOpen"
+                        v-if="modalOpen"
                         :selected-range-key="selectedRangeKey"
                         :title="title"
                         :ranges="ranges"
